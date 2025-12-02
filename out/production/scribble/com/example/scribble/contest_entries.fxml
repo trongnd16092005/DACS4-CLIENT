@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1400.0" style="-fx-background-color: #005D4D;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.scribble.contest_entries__c">
+    <top>
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1400.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="back_button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle_back_button" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #F4908A; -fx-background-radius: 10;" stylesheets="@../../../style/style.css" text="Back" textFill="#014237">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+            <padding>
+                <Insets left="100.0" right="100.0" />
+            </padding>
+        </HBox>
+    </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="1400.0" spacing="20.0">
+               <children>
+                  <Label text="Welcome to the" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="genre_name" text="&quot;Genre Name&quot;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label text="section" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="102.0" prefWidth="1400.0" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="1400.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="previous_week_button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle_previous_week_button" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #F5E0CD; -fx-background-radius: 10 0 0 10;" text="Previous Week" textFill="#014237">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="current_week_button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle_current_week_button" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #F5E0CD; -fx-background-radius: 0 10 10 0;" text="Current Week" textFill="#014237">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="weekly_session" text="Saturday, 21st June 2025 - Friday , 27th June 2025" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="countdown" text="Next reset in :  6d : 14h : 23m : 45s" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1030.0" spacing="20.0" style="-fx-background-radius: 10;">
+               <children>
+                  <Button fx:id="add_entry" mnemonicParsing="false" onAction="#handle_add_entry" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent;" stylesheets="@../../../style/style.css">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label text="Create your own" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="50.0" prefWidth="504.0" />
+                  <ComboBox fx:id="filter_combo_box" prefHeight="26.0" prefWidth="188.0" promptText="submisstion date (asc)" style="-fx-background-color: #CEC6C5; -fx-background-radius: 20;" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <ScrollPane prefHeight="320.0" prefWidth="1400.0" style="-fx-background-color: transparent;">
+               <content>
+                  <VBox fx:id="entryContainer" alignment="TOP_CENTER" prefHeight="496.0" prefWidth="1384.0" spacing="15.0" style="-fx-background-color: #005D4D;">
+                     <children>
+                        <HBox fx:id="entry_hbox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="1030.0" spacing="25.0" style="-fx-background-color: #F4908A; -fx-background-radius: 10;">
+                           <children>
+                              <HBox fx:id="entry_no_hbox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="58.0" style="-fx-background-color: #014237; -fx-background-radius: 20;">
+                                 <children>
+                                    <Label fx:id="entry_no" text="1" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="378.0">
+                                 <children>
+                                    <Label fx:id="title_of_the_content" prefHeight="35.0" prefWidth="407.0" text="Tittle of the content">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="author_name" text="by author name">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER" prefHeight="95.0" prefWidth="424.0" spacing="15.0">
+                                 <children>
+                                    <Label fx:id="submited_date" text="Uploaded on &#10;12/12/2023" textAlignment="CENTER" wrapText="true" />
+                                    <HBox alignment="CENTER" prefHeight="95.0" prefWidth="169.0" spacing="10.0">
+                                       <children>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0">
+                                             <children>
+                                                <Button fx:id="not_voted_button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle_not_voted_button" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: transparent;">
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../images/icons/star5.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="voted_button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle_voted_button" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: transparent;">
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../images/icons/star6.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Label fx:id="voted_by_no_of_people" text="Received &#10;12 votes" wrapText="true" />
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="open_entry" mnemonicParsing="false" onAction="#handle_open_entry" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #F5E0CD; -fx-background-radius: 5;" text="open" textFill="#014237">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
